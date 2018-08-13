@@ -2,7 +2,9 @@
  * 参数： 
  * back: 控制返回按钮的显示
  * title: 配置header中的title
+ * index: 显示搜索框
  * sacn: 扫一扫
+ * msg: 信息页面图标
  */
 import React, { Component } from 'react'
 import scan from "../../assets/images/scan.png"
@@ -17,6 +19,7 @@ class Header extends Component {
   }
   toSearch() {
     // 跳转到Search组件
+    console.log('跳转到搜索页面的操作 待会做')
   }
   toMsg() {
     // 跳转到消息中心
