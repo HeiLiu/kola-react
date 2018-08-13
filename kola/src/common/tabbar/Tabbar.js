@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { TabBar } from 'antd-mobile';
+import './tabbar.styl'
 
-
-class TabBar1 extends Component {
+class TabBarDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,9 +15,8 @@ class TabBar1 extends Component {
 
   renderContent(pageText) {
     return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-        <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
+      <div>
+        <a
           onClick={(e) => {
             e.preventDefault();
             this.setState({
@@ -27,7 +26,7 @@ class TabBar1 extends Component {
         >
           Click to show/hide tab-bar
         </a>
-        <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
+        <a
           onClick={(e) => {
             e.preventDefault();
             this.setState({
@@ -43,12 +42,14 @@ class TabBar1 extends Component {
 
   render() {
     return (
-      <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+      <div className='container'>
         <TabBar
+        style ={{display: 'inline-block'}}
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
           barTintColor="white"
           hidden={this.state.hidden}
+          tabBarPosition="bottom"
         >
           <TabBar.Item
             title="Life"
@@ -56,12 +57,14 @@ class TabBar1 extends Component {
             icon={<div style={{
               width: '22px',
               height: '22px',
+              display: 'inline-block',
               background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
             />
             }
             selectedIcon={<div style={{
               width: '22px',
               height: '22px',
+              display: 'inline-block',
               background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
             />
             }
@@ -81,6 +84,7 @@ class TabBar1 extends Component {
               <div style={{
                 width: '22px',
                 height: '22px',
+                display: 'inline-block',
                 background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
               />
             }
@@ -109,6 +113,7 @@ class TabBar1 extends Component {
               <div style={{
                 width: '22px',
                 height: '22px',
+                display: 'inline-block',
                 background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
               />
             }
@@ -116,6 +121,7 @@ class TabBar1 extends Component {
               <div style={{
                 width: '22px',
                 height: '22px',
+                display: 'inline-block',
                 background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
               />
             }
@@ -151,5 +157,5 @@ class TabBar1 extends Component {
   }
 }
 
-// ReactDOM.render(<TabBarExample />, mountNode);
-export default TabBar1
+
+export default TabBarDemo

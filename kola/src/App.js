@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.styl';
 import './assets/stylus/font.styl'
 import './assets/stylus/reset.styl'
 import Header from './common/header/Header'
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header index scan msg/>
+        <Header scan index msg/>
         <Tabbar/>
       </div>
     );
